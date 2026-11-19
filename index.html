@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dimas Satria Nugroho | Sports Journalist, Content Writer & Copywriter</title>
+  <!-- Load Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Load Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Custom Configuration for Navy Blue & Gold Palette -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              50: '#f0f4f8',
+              100: '#d9e2ec',
+              200: '#bcccdc',
+              600: '#2b547e',
+              700: '#1e3a5f',
+              800: '#152a45',
+              900: '#0d1b2e',
+            },
+            gold: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white">
+
+  <!-- Toast Notification untuk Salin Kontak -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden items-center gap-3 bg-navy-800 text-white px-5 py-3 rounded-xl shadow-xl border border-gold-500/30 transition-all duration-300">
+    <svg class="w-5 h-5 text-gold-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+    </svg>
+    <span id="toast-message" class="text-sm font-medium">Berhasil disalin ke clipboard!</span>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Brand / Logo -->
+        <a href="#" class="flex items-center gap-2.5 group">
+          <span class="w-9 h-9 rounded-lg bg-navy-700 text-gold-400 font-bold text-lg flex items-center justify-center shadow-sm group-hover:bg-navy-800 transition">
+            DN
+          </span>
+          <span class="font-bold text-navy-800 text-lg tracking-tight">Dimas<span class="text-gold-600">.</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="text-sm font-medium text-slate-600 hover:text-navy-700 transition">Tentang Saya</a>
+          <a href="#experience" class="text-sm font-medium text-slate-600 hover:text-navy-700 transition">Pengalaman & Proyek</a>
+          <a href="#skills" class="text-sm font-medium text-slate-600 hover:text-navy-700 transition">Keterampilan</a>
+          <a href="#contact" class="px-4 py-2 rounded-lg bg-navy-700 text-white text-sm font-semibold hover:bg-navy-800 transition shadow-sm">
+            Hubungi Saya
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" aria-label="Buka Menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+      <a href="#about" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-navy-50 hover:text-navy-700">Tentang Saya</a>
+      <a href="#experience" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-navy-50 hover:text-navy-700">Pengalaman & Proyek</a>
+      <a href="#skills" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-navy-50 hover:text-navy-700">Keterampilan</a>
+      <a href="#contact" class="block px-3 py-2 rounded-lg text-base font-semibold bg-navy-700 text-white text-center mt-2">Hubungi Saya</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-white border-b border-slate-200/80">
+    <!-- Subtle Decorative Background Accent -->
+    <div class="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-navy-50/70 to-transparent pointer-events-none"></div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-gold-400/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32 relative">
+      <div class="max-w-3xl">
+        <!-- Status Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-50 border border-navy-100 text-navy-700 text-xs sm:text-sm font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+          Tersedia untuk Peran Reporter Olahraga, Content Writer & Copywriter
+        </div>
+
+        <!-- Name & Main Tagline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-800 tracking-tight leading-tight mb-5">
+          Dimas Satria Nugroho
+        </h1>
+        <p class="text-xl sm:text-2xl font-semibold text-gold-600 mb-6 leading-snug">
+          “Menghadirkan Narasi Tajam dari Lapangan Hijau hingga Layar Digital melalui Jurnalisme Akurat & Visual Bercerita.”
+        </p>
+
+        <!-- Sub-headline -->
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-9 max-w-2xl">
+          Lulusan D3 Penerbitan (Jurnalistik) Politeknik Negeri Jakarta dengan pengalaman liputan langsung di media nasional (<strong class="text-navy-700 font-semibold">Liputan6.com</strong>), penulisan artikel berbasis SEO, serta produksi konten visual yang memikat audiens.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <a href="#experience" class="inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl bg-navy-700 text-white font-semibold hover:bg-navy-800 transition shadow-md shadow-navy-700/20">
+            <span>Lihat Pengalaman & Karya</span>
+            <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <a href="https://bit.ly/4wBsRgK" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-navy-700 font-semibold border-2 border-navy-700/20 hover:border-gold-500 hover:bg-gold-50/50 transition">
+            <span>Buka Portofolio Eksternal</span>
+            <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <!-- Left Column: Bio -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="inline-block">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Tentang Saya</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-navy-800 mt-1">Jurnalis Lapangan dengan Ketajaman Angle & Strategi Konten</h2>
+            <div class="h-1 w-16 bg-gold-500 rounded-full mt-3"></div>
+          </div>
+
+          <p class="text-slate-600 leading-relaxed text-base">
+            Saya adalah lulusan <strong class="text-navy-800">D3 Penerbitan (Konsentrasi Jurnalistik) Politeknik Negeri Jakarta</strong> dengan predikat sangat memuaskan (<strong class="text-navy-800">IPK 3,74/4,00</strong>). Perjalanan karier awal saya ditempa langsung di ruang redaksi dan lapangan, mulai dari meliput pertandingan olahraga secara <em>real-time</em> di Kanal Bola Liputan6.com hingga membangun ekosistem publikasi digital di media kampus.
+          </p>
+          <p class="text-slate-600 leading-relaxed text-base">
+            Saya percaya tulisan yang baik tidak hanya akurat secara fakta dan ramah mesin pencari (SEO), tetapi juga mampu menggugah emosi pembaca melalui sudut pandang (<em class="text-navy-700">angle</em>) yang segar serta dukungan visual fotografi yang kuat. Terbiasa bekerja di bawah tenggat waktu (<em class="text-navy-700">deadline</em>) ketat, saya siap membantu redaksi maupun merek dalam memproduksi narasi berkualitas tinggi.
+          </p>
+        </div>
+
+        <!-- Right Column: Education & Key Metrics Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-sm space-y-6">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-md bg-gold-50 text-gold-700 text-xs font-bold uppercase tracking-wider mb-3">
+                Latar Belakang Pendidikan
+              </span>
+              <h3 class="text-lg font-bold text-navy-800">Politeknik Negeri Jakarta</h3>
+              <p class="text-sm font-medium text-slate-700">D3 Penerbitan (Konsentrasi Jurnalistik)</p>
+              <p class="text-xs text-slate-500 mt-1">Depok, Jawa Barat • Lulus: September 2026</p>
+              <div class="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
+                <strong class="text-navy-700">Tugas Akhir:</strong> Analisis Pola Bahasa Hiperbolis pada Judul Berita Olahraga di Media Daring.
+              </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-3 gap-3 pt-2">
+              <div class="bg-navy-50/70 rounded-xl p-3 text-center border border-navy-100/80">
+                <span class="block text-xl sm:text-2xl font-extrabold text-navy-700">3,74</span>
+                <span class="text-[11px] font-medium text-slate-600">IPK / 4,00</span>
+              </div>
+              <div class="bg-gold-50/70 rounded-xl p-3 text-center border border-gold-200/60">
+                <span class="block text-xl sm:text-2xl font-extrabold text-gold-600">+20%</span>
+                <span class="text-[11px] font-medium text-slate-600">Engagement</span>
+              </div>
+              <div class="bg-navy-50/70 rounded-xl p-3 text-center border border-navy-100/80">
+                <span class="block text-xl sm:text-2xl font-extrabold text-navy-700">+10%</span>
+                <span class="text-[11px] font-medium text-slate-600">Akses Blog</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Projects Section (Grid Card) -->
+  <section id="experience" class="py-16 sm:py-20 bg-white border-y border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Heading -->
+      <div class="max-w-2xl mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Rekam Jejak & Karya</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-navy-800 mt-1">Pengalaman Kerja & Proyek Pilihan</h2>
+        <div class="h-1 w-16 bg-gold-500 rounded-full mt-3"></div>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base">
+          Kontribusi nyata dalam ruang redaksi olahraga, pengelolaan publikasi digital, dan produksi konten visual.
+        </p>
+      </div>
+
+      <!-- Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        
+        <!-- Card 1: Liputan6.com -->
+        <article class="group bg-slate-50 hover:bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 hover:border-gold-400 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-navy-700 text-white">
+                Media Nasional • Kanal Bola
+              </span>
+              <span class="text-xs font-medium text-slate-500">Okt 2025 – Jan 2026</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy-800 group-hover:text-gold-600 transition">
+              Reporter Magang (Kanal Bola)
+            </h3>
+            <p class="text-sm font-semibold text-slate-700 mb-4">Liputan6.com • Jakarta</p>
+            <ul class="space-y-2.5 text-sm text-slate-600 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></span>
+                <span>Menghasilkan <strong>5–10 artikel berita olahraga daring</strong> yang akurat dan ramah mesin pencari (SEO) guna memenuhi target publikasi harian redaksi.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></span>
+                <span>Menyelesaikan <strong>3 laporan liputan langsung (<em>on-site coverage</em>)</strong> pertandingan dan ajang olahraga dengan wawancara narasumber secara <em>real-time</em>.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></span>
+                <span>Merumuskan sudut pandang (<em>angle</em>) baru dari temuan lapangan untuk memperkaya variasi pemberitaan kanal olahraga.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/70 flex flex-wrap gap-2">
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">Sports Journalism</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">Live Report</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">SEO News</span>
+          </div>
+        </article>
+
+        <!-- Card 2: Tinta Digital -->
+        <article class="group bg-slate-50 hover:bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 hover:border-gold-400 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-gold-100 text-gold-700 border border-gold-200">
+                Terpilih Expo Day PNJ 2025
+              </span>
+              <span class="text-xs font-medium text-slate-500">Feb 2025 – Jun 2025</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy-800 group-hover:text-gold-600 transition">
+              Reporter & Perancang Blog (Blog Designer)
+            </h3>
+            <p class="text-sm font-semibold text-slate-700 mb-4">Tinta Digital • Depok</p>
+            <ul class="space-y-2.5 text-sm text-slate-600 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></span>
+                <span><strong>Meningkatkan aksesibilitas pembaca sebesar 10%</strong> melalui perancangan struktur tata letak situs web dan pengorganisasian kanal publikasi secara sistematis.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></span>
+                <span>Menerbitkan <strong>3–7 artikel jurnalistik dan konten fitur</strong> yang komunikatif dan relevan bagi audiens muda.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></span>
+                <span>Mengantarkan Tinta Digital terpilih tampil dalam ajang bergengsi <em>Journalistic Expo Day PNJ 2025</em>.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/70 flex flex-wrap gap-2">
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">Blog Design</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">Feature Writing</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">CMS Management</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Warta PNJ -->
+        <article class="group bg-slate-50 hover:bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 hover:border-gold-400 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-navy-100 text-navy-700">
+                Media Kampus
+              </span>
+              <span class="text-xs font-medium text-slate-500">Mar 2025 – Jul 2025</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy-800 group-hover:text-gold-600 transition">
+              Reporter
+            </h3>
+            <p class="text-sm font-semibold text-slate-700 mb-4">Warta Politeknik Negeri Jakarta • Depok</p>
+            <ul class="space-y-2.5 text-sm text-slate-600 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></span>
+                <span>Memproduksi <strong>3 artikel berita mendalam</strong> bagi civitas academica melalui liputan lapangan dan wawancara terstruktur dengan narasumber kunci.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></span>
+                <span>Menjaga akurasi fakta dan ketepatan tata bahasa melalui proses verifikasi data serta penyuntingan mandiri sebelum publikasi.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/70 flex flex-wrap gap-2">
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">Wawancara</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">Fact-Checking</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">Copy Editing</span>
+          </div>
+        </article>
+
+        <!-- Card 4: Konten Kreator & Fotografer -->
+        <article class="group bg-slate-50 hover:bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 hover:border-gold-400 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-navy-100 text-navy-700">
+                Proyek Mandiri
+              </span>
+              <span class="text-xs font-medium text-slate-500">Jan 2024 – Sekarang</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy-800 group-hover:text-gold-600 transition">
+              Konten Kreator & Fotografer Mandiri
+            </h3>
+            <p class="text-sm font-semibold text-slate-700 mb-4">Portofolio Visual (@dimss_nugroho) • Jakarta</p>
+            <ul class="space-y-2.5 text-sm text-slate-600 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></span>
+                <span><strong>Meningkatkan jangkauan (<em>reach</em>) dan interaksi audiens (<em>engagement</em>) sebesar 20%</strong> melalui strategi pengelolaan konten visual secara konsisten.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></span>
+                <span>Memproduksi dan mengkurasi <strong>5–10 karya fotografi</strong> (<em>portrait</em>, lanskap, <em>street photography</em>) dengan takarir (<em>caption</em>) berkonsep <em>storytelling</em> dan <em>copywriting</em>.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/70 flex flex-wrap gap-2">
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">Street Photography</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">Copywriting</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-white border border-slate-200 text-navy-700">Social Media Growth</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- My Skills Section (Badge Layout) -->
+  <section id="skills" class="py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-gold-600">Kompetensi Utama</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-navy-800 mt-1">Keterampilan Editorial, Visual & Profesional</h2>
+        <div class="h-1 w-16 bg-gold-500 rounded-full mt-3"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Kategori 1: Editorial & Konten -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-navy-50 text-navy-700 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-navy-800 text-lg">Editorial & Penulisan</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-navy-50 text-navy-700 border border-navy-100">Penulisan Berita (Hard News & Feature)</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-navy-50 text-navy-700 border border-navy-100">Copywriting</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-navy-50 text-navy-700 border border-navy-100">Penulisan Artikel SEO</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-navy-50 text-navy-700 border border-navy-100">Penyuntingan Naskah (Copy Editing)</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-navy-50 text-navy-700 border border-navy-100">Wawancara & Liputan Lapangan</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-navy-50 text-navy-700 border border-navy-100">Manajemen Konten Blog / CMS</span>
+          </div>
+        </div>
+
+        <!-- Kategori 2: Visual & Perangkat Lunak -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-gold-50 text-gold-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-navy-800 text-lg">Visual & Tools</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-gold-50 text-gold-700 border border-gold-200/80">Fotografi Jurnalistik</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-gold-50 text-gold-700 border border-gold-200/80">Street & Portrait Photography</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-gold-50 text-gold-700 border border-gold-200/80">Adobe Photoshop</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-gold-50 text-gold-700 border border-gold-200/80">CapCut (Video Editing)</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-gold-50 text-gold-700 border border-gold-200/80">Blogging & Web Layout</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-gold-50 text-gold-700 border border-gold-200/80">Microsoft Word</span>
+          </div>
+        </div>
+
+        <!-- Kategori 3: Soft Skills -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 text-navy-700 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-navy-800 text-lg">Soft Skills</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">Ketajaman Menemukan Angle Berita</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">Komunikasi Efektif</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">Manajemen Waktu & Deadline</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">Adaptabilitas Tinggi</span>
+            <span class="px-3.5 py-1.5 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">Kolaborasi Tim & Kerja Mandiri</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 sm:py-20 bg-navy-800 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-gold-400">Mari Berkolaborasi</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight">
+            Siap Bergabung dengan Tim Redaksi atau Kreatif Anda
+          </h2>
+          <p class="text-navy-100 text-base leading-relaxed">
+            Tertarik mendiskusikan peluang kerja penuh waktu, magang lanjutan, maupun proyek penulisan lepas? Jangan ragu menghubungi saya melalui email, WhatsApp, atau jejaring profesional berikut.
+          </p>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="bg-navy-900/70 border border-navy-600/50 rounded-2xl p-6 sm:p-8 space-y-4">
+            <!-- Email Item -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-navy-800/80 border border-navy-700">
+              <div>
+                <span class="text-xs text-gold-400 font-semibold uppercase block">Email</span>
+                <a href="mailto:dimassatria.nugroho4@gmail.com" class="text-sm sm:text-base font-medium text-white hover:text-gold-400 transition break-all">
+                  dimassatria.nugroho4@gmail.com
+                </a>
+              </div>
+              <button onclick="copyText('dimassatria.nugroho4@gmail.com', 'Alamat email berhasil disalin!')" class="self-start sm:self-center px-3 py-1.5 rounded-lg bg-navy-700 hover:bg-gold-600 text-xs font-semibold text-white transition shrink-0">
+                Salin Email
+              </button>
+            </div>
+
+            <!-- WhatsApp / Phone Item -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-navy-800/80 border border-navy-700">
+              <div>
+                <span class="text-xs text-gold-400 font-semibold uppercase block">Telepon / WhatsApp</span>
+                <a href="https://wa.me/6287764841569" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-medium text-white hover:text-gold-400 transition">
+                  +62 877-6484-1569
+                </a>
+              </div>
+              <button onclick="copyText('+62 877-6484-1569', 'Nomor telepon berhasil disalin!')" class="self-start sm:self-center px-3 py-1.5 rounded-lg bg-navy-700 hover:bg-gold-600 text-xs font-semibold text-white transition shrink-0">
+                Salin Nomor
+              </button>
+            </div>
+
+            <!-- Social Links Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <a href="https://linkedin.com/in/dimassatria-nugroho-17bb5427b" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-navy-700 hover:bg-navy-600 text-sm font-semibold text-white transition border border-navy-600">
+                <span>LinkedIn</span>
+                <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+              <a href="https://bit.ly/4wBsRgK" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gold-600 hover:bg-gold-500 text-sm font-semibold text-white transition shadow-sm">
+                <span>Portofolio</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+              <a href="https://instagram.com/dimss_nugroho" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-navy-700 hover:bg-navy-600 text-sm font-semibold text-white transition border border-navy-600">
+                <span>@dimss_nugroho</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy-900 text-navy-200 py-8 border-t border-navy-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+      <p>&copy; 2026 <strong class="text-white">Dimas Satria Nugroho</strong>. Seluruh hak cipta dilindungi.</p>
+      <p class="text-xs text-navy-300">Jakarta Timur, DKI Jakarta • Sports Journalist & Content Writer</p>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Toggle Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Tutup menu mobile saat tautan diklik
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Fungsi Salin Teks ke Clipboard dengan Fallback aman untuk iFrame
+    function copyText(text, message) {
+      const tempInput = document.createElement('textarea');
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        showToast(message);
+      } catch (err) {
+        console.error('Gagal menyalin teks:', err);
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    // Tampilkan Notifikasi Toast
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+      toastMessage.textContent = message;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
